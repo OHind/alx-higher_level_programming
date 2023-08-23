@@ -9,19 +9,18 @@ from models.square import Square
 
 class TestBaseClass(unittest.TestCase):
 
-    def test_class_membership(self):
+    def test_no_arg(self):
         """Base class unittest"""
         b0 = Base()
-        self.assertIsInstance(b0, Base)
+        b1 = Base()
+        self.assertEqual(b0.id, b1.id - 1)
 
     def test_no_id_arg(self):
         """Base class ids unittest"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
-        self.assertEqual(b1.id, 7)
-        self.assertEqual(b2.id, 8)
-        self.assertEqual(b3.id, 9)
+        self.assertEqual(b1.id, b3.id - 2)
 
     def test_no_id_plus_id_combo(self):
         """Base class ids unittest"""
