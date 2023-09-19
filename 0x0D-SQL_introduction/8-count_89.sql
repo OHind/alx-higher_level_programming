@@ -1,2 +1,2 @@
--- Create the seconfètable table with rows --
-SHOW COUNT(*) FROM first_table WHERE id = 89;
+-- Create the seconf_table table with rows --
+SELECT COUNT(*) FROM first_table WHERE id = 89;
