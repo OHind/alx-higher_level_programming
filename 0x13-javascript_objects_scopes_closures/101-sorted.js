@@ -1,14 +1,11 @@
 #!/usr/bin/node
-
-let dict = require('./101-data').dict;
-let d = {};
-
-for (let k in dict) {
-  if (!(dict[k] in d)) {
-    d[dict[k]] = [k];
+const oldDict = require('./101-data').dict;
+const newDict = {};
+for (const val in oldDict) {
+  if (oldDict[val] in newDict) {
+    newDict[oldDict[val]].push(val);
   } else {
-    d[dict[k]].push(k);
+    newDict[oldDict[val]] = [val];
   }
 }
-
-console.log(d);
+console.log(newDict);
