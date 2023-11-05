@@ -1,11 +1,12 @@
 #!/usr/bin/node
-const dict = require('./101-data.js').dict;
-let newDict = {};
-for (let key in dict) {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [key];
+
+const dic1 = require('./101-data').dict;
+const dic2 = {};
+for (const key in dic1) {
+  if (dic2[dic1[key]] === undefined) {
+    dic2[dic1[key]] = [key];
   } else {
-    newDict[dict[key]].push(key);
+    dic2[dic1[key]].push(key);
   }
 }
-console.log(newDict);
+console.log(dic2);
